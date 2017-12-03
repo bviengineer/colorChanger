@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DOM Event Exercise</title>
+    <style>
+        .myStyle {
+            background-color: purple;            
+        }
+    </style>
 </head>
 <body>
     <button id="btn">CLICK ME</button>
     <script>
-        document.getElementsByTagName("button")[0].addEventListener("click", function(){
-            document.body.style.backgroundColor = "purple";
-            });
-
-            //or (function works using either method)
+        var clickMeBtn = document.getElementById("btn");
         
-        // var clickMeBtn = document.getElementById("btn");
-        // clickMeBtn.addEventListener("click", function(){
-        //     document.body.style.backgroundColor = "purple";
-        // });
+        clickMeBtn.addEventListener("click", function(){
+           document.body.classList.toggle("myStyle");
+        });
     </script>    
 </body>
 </html>
